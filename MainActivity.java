@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(data.get(i).equals("Tianrui_123"))
                 {
-                    Log.e("TAG", "onItemClick: "+adapterView);
+                    Log.e("TAG", "进入 onItemClick: ");
                     WifiUser wifiUser=new WifiUser(data.get(i), 7);//实例化对象
                     Intent intent=new Intent();
                     intent.setClass(MainActivity.this, ConnectActivity.class);
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
            }
            data = new ArrayList<String>();
            for (ScanResult sr :mWifilist) {
-               Log.e("SSID",sr.SSID);
+             //  Log.e("SSID",sr.SSID);
                data.add(sr.SSID);
            }
 
@@ -111,10 +111,10 @@ public class MainActivity extends AppCompatActivity {
 
        }
 
-
     }
 
-
-
+    public void removewifi(View view){
+        wifiAdmin.removeWifi(wifiAdmin.getNetworkId());
+    }
 
 }
